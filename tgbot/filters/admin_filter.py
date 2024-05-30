@@ -9,5 +9,5 @@ class AdminFilter(SimpleCustomFilter):
 
     key = 'admin'
     def check(self, message):
-
         return int(message.chat.id) == int(Admin.ADMIN.value)
+

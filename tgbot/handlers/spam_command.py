@@ -12,7 +12,6 @@ def anti_spam(message: Message, bot: TeleBot):
     bot.send_message(
         message.chat.id,
         """This is demo spam command.
-If you send this command more than once within 2 seconds, 
-bot will warn you.
-This is made by using middlewares."""
-)
+                If you send this command more than once within 2 seconds, 
+                bot will warn you.
+                This is made by using middlewares.""")
