@@ -17,8 +17,6 @@ from tgbot.keyboards.main_menu import f_main_menu
 from tgbot.middlewares.antiflood_middleware import antispam_func
 
 
-types_factory = CallbackData('activity_types', prefix='activity')
-
 
 # states
 from tgbot.states.register_state import Register
@@ -33,6 +31,7 @@ from key import TOKEN
 
 # remove this if you won't use middlewares:
 from telebot import apihelper
+
 apihelper.ENABLE_MIDDLEWARE = True
 
 # I recommend increasing num_threads
@@ -48,24 +47,21 @@ def register_handlers():
     # bot.register_message_handler(get_updates, commands=['getUpdates'], admin=True, pass_bot=True)
     # bot.register_message_handler(admin_user, commands=['start'], admin=True, pass_bot=True)
 
-
     bot.register_message_handler(anti_spam, commands=['spam'], pass_bot=True)
 
     # bot.register_message_handler(all_users, commands=['allusers'], admin=True, pass_bot=True)
     # bot.register_message_handler(get_act_by_ID, commands=['getactbyid'], admin=True, pass_bot=True)
 
 
-def register_callback_query_handlers():
-    bot.register_callback_query_handler(get_status, config=types_factory.filter())
-
+# def register_callback_query_handlers():
+#     bot.register_callback_query_handler(callback=get_status, func=lambda call: True, config=types_factory.filter())
 
 
 register_handlers()
-register_callback_query_handlers()
+# register_callback_query_handlers()
 
 # Middlewares
 bot.register_middleware_handler(antispam_func, update_types=['message'])
-
 
 # custom filters
 bot.add_custom_filter(AdminFilter())
@@ -82,4 +78,3 @@ while True:
         # glob.logger.warning("Перезагрузка бота")
         # glob.logger.warning(traceback.format_exc())
         bot.stop_polling()
-

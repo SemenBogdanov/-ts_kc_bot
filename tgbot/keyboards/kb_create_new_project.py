@@ -4,6 +4,8 @@ from telebot.callback_data import CallbackData
 
 from create_bot import BotDB
 
+
+
 from tgbot.message_functions.functions import delete_message_mg
 
 
@@ -21,9 +23,10 @@ from tgbot.message_functions.functions import delete_message_mg
 #     return keyboard
 
 
-def kb_activity_type(bot: BotDB):
-    ACTIVITY_TYPES = bot.ACTIVITY_TYPES
+def kb_activity_type(bot: BotDB, types_factory):
 
+    ACTIVITY_TYPES = bot.ACTIVITY_TYPES
+    print(ACTIVITY_TYPES)
     return types.InlineKeyboardMarkup(
         keyboard=[
             [
