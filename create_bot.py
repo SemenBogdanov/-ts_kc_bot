@@ -3,6 +3,7 @@ import logging
 import pandas
 import psycopg2
 import sqlalchemy
+from telebot.callback_data import CallbackData
 
 from key import db_user, db_pass, db_ip, db_port, db_name
 from telebot import TeleBot
@@ -19,6 +20,7 @@ class BotDB(TeleBot):
         self.query = None
         self.KC_USERS = self.get_tg_id_kc_users()
         self.ACTIVITY_TYPES = self.get_activity_types()
+        self.types_factory = CallbackData('activity_types', prefix='activity')
 
     # DATABASE FUNCTIONS---------------------------------------------------------
     @staticmethod

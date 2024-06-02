@@ -42,24 +42,24 @@ def callback_func(call: types.CallbackQuery, bot):
 
 
 
-
-
-    if call.data == 'main_status':
-        # engine.execute(log_action(call.from_user.id, 'Высокоуровневый отчёт ИБ'))
-        call_btn.main_status(call)
-        return 1
-
-    if call.data == 'manage_plays':
-        # engine.execute(log_action(call.from_user.id, 'Управление играми'))
-        call_btn.manage_plays_message(call)
-        return 1
-
-    if call.data == 'mp_all_incidents':
-        # engine.execute(log_action(call.from_user.id, 'УИ Инциденты в работе'))
-        call_btn.manage_plays_inc_all(call)
-        return 1
-
-    if call.data == 'mp_fed':
-        # engine.execute(log_action(call.from_user.id, 'УИ Федеральные инциденты'))
-        call_btn.manage_plays_fed(call)
-        return 1
+    #
+    #
+    # if call.data == 'main_status':
+    #     # engine.execute(log_action(call.from_user.id, 'Высокоуровневый отчёт ИБ'))
+    #     call_btn.main_status(call)
+    #     return 1
+    #
+    # if call.data == 'manage_plays':
+    #     # engine.execute(log_action(call.from_user.id, 'Управление играми'))
+    #     call_btn.manage_plays_message(call)
+    #     return 1
+    #
+    # if call.data == 'mp_all_incidents':
+    #     # engine.execute(log_action(call.from_user.id, 'УИ Инциденты в работе'))
+    #     call_btn.manage_plays_inc_all(call)
+    #     return 1
+    #
+    # if call.data == 'mp_fed':
+    #     # engine.execute(log_action(call.from_user.id, 'УИ Федеральные инциденты'))
+    #     call_btn.manage_plays_fed(call)
+    #     return 1

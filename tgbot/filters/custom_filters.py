@@ -7,4 +7,7 @@ class ActitityCallbackFilter(AdvancedCustomFilter):
     key = 'config'
 
     def check(self, call: telebot.types.CallbackQuery, config: CallbackDataFilter):
-        return config.check(query=call)
+        print('Выполняется провека внутри класса ActitityCallbackFilter')
+        r = config.check(query=call)
+        print('Результат проверки: ', r)
+        return r
